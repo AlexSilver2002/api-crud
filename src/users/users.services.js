@@ -1,4 +1,4 @@
-//? File's imports
+// Importación de archivos
 const userControllers = require("./users.controllers");
 
 const getAllUsers = (req, res) => {
@@ -6,47 +6,75 @@ const getAllUsers = (req, res) => {
   res.status(200).json(data);
 };
 
-
-
 const getUserById = (req, res) => {
   const id = req.params.id;
   const data = userControllers.findUserById(id);
 
   if (data) {
-    //? Caso Exitoso
-    res.status(200).json(data);
+    res.status(200).json(data); // Caso Exitoso
   } else {
-    //! error
-    res.status(404).json({ message: "Invalid ID" });
+    res.status(404).json({ message: "Invalid ID" }); // Error
   }
 };
 
 const postNewUser = (req, res) => {
   const { first_name, last_name, email, password, birthday } = req.body;
   if (first_name) {
-    //? Caso Exitoso
-    const data = userControllers.createNewUser({ first_name, last_name, email, password, birthday  });
-    res.status(201).json(data);
+    const data = userControllers.createNewUser({
+      first_name,
+      last_name,
+      email,
+      password,
+      birthday
+    });
+    res.status(201).json(data); // Caso Exitoso
   } else {
-    //! error
     res.status(400).json({
-            message: "Invalid Data",
-            fields: { 
-                first_name: "lili*", 
-                last_name: "altamirano*",
-                email: "lili@email.com", 
-                password: "1234" ,
-                bithday: "1991" 
-            },
-        });
+      message: "Invalid Data",
+      fields: {
+        first_name: "alex*",
+        last_name: "rojas*",
+        email: "example@hotmail.com",
+        password: "1234",
+        birthday: "1691"
+      }
+    }); // Error
   }
 };
 
+const updateUser = (req, res) => {
+  const id = req.params.id;
+  const { first_name, last_name, email, password, birthday } = req.body;
+  const updatedUser = userControllers.updateUser(id, {
+    first_name,
+    last_name,
+    email,
+    password,
+    birthday
+  });
 
+  if (updatedUser) {
+    res.status(200).json(updatedUser); 
+  } else {
+    res.status(404).json({ message: "Invalid ID" }); // Error
+  }
+};
+
+const deleteUser = (req, res) => {
+  const id = req.params.id;
+  const deletedUser = userControllers.deleteUser(id);
+
+  if (deletedUser) {
+    res.status(200).json(deletedUser); 
+  } else {
+    res.status(404).json({ message: "Invalid ID" }); // Error
+  }
+};
 
 module.exports = {
-    getAllUsers,
-    getUserById,
-    postNewUser
-}
-
+  getAllUsers,
+  getUserById,
+  postNewUser,
+  updateUser,
+  deleteUser
+};

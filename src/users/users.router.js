@@ -1,11 +1,13 @@
-//? Dependencies
-const router = require('express').Router()
 
-//? File Imports
-const userServices = require('./users.services')
+const router = require('express').Router();
 
-router.get('/users', userServices.getAllUsers)
-router.post('/users', userServices.postNewUser)
-router.get('/users/:id', userServices.getUserById)
+const userServices = require('./users.services');
 
-module.exports = router
+
+router.get('/users', userServices.getAllUsers);
+router.post('/users', userServices.postNewUser);
+router.get('/users/:id', userServices.getUserById);
+router.put('/users/:id', userServices.updateUser);
+router.delete('/users/:id', userServices.deleteUser);
+
+module.exports = router;
