@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "3ecc5a4d-19e1-4542-bbd3-6537f368d876",
+		"name": "API CRUD Users",
+		"description": "StartFragment\n\nDatos a modificar\n\nStartFragment\n\n\"first_name\": \"John\",  \n\"last_name\": \"Doe\",  \n\"email\": \"johndoe@example.com\",  \n\"password\": \"password123\",  \n\"birthday\": \"1990-01-01\"\n\nLa api paso todos los test de get,post,put,delete\n\nEndFragment\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "27681237-3ecc5a4d-19e1-4542-bbd3-6537f368d876"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"id": "1873f5d5-3b93-44bb-a929-bc7b9c69d981",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-crud-lnmb.onrender.com/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"api-crud-lnmb",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "StartFragment\n\nObtener todos los usuarios:\n\n- Método: GET\n- URL: `https://api-crud-lnmb.onrender.com/api/v1/users`\n- Descripción: Esta solicitud obtiene todos los usuarios registrados en la API.\n    \n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a User",
+			"id": "6a13bf3f-b788-41b3-a659-bbb2c677c770",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api-crud-lnmb.onrender.com/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"api-crud-lnmb",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "StartFragment\n\n- Método: POST\n- URL: `https://api-crud-lnmb.onrender.com/api/v1/users`\n- Descripción: Esta solicitud crea un nuevo usuario en la API.\n- Cuerpo de la solicitud (en formato JSON\n    \n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"id": "8dfa50f6-0c8e-4b50-beb3-3ed180218cad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api-crud-lnmb.onrender.com/api/v1/users/",
+					"protocol": "https",
+					"host": [
+						"api-crud-lnmb",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "StartFragment\n\n- Método: DELETE\n- URL: `https://api-crud-lnmb.onrender.com/api/v1/users/{id}`\n- Descripción: Esta solicitud elimina un usuario específico según su ID.\n    \n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a User",
+			"id": "90946f81-a838-4909-9232-ba398867a8ab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api-crud-lnmb.onrender.com/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"api-crud-lnmb",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "StartFragment\n\n- Método: PUT\n- URL: `https://api-crud-lnmb.onrender.com/api/v1/users/{id}`\n- Descripción: Esta solicitud actualiza un usuario existente según su ID.\n- Cuerpo de la solicitud (en formato JSON) con los campos a actualizar\n    \n\nEndFragment"
+			},
+			"response": []
+		}
+	]
+}
